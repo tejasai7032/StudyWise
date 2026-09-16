@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        StudyWise | AI Study Companion
+    </title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- IMPORTANT: Flask Static CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ====================================================
+         BACKGROUND
+    ===================================================== -->
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+    <div class="background-grid"></div>
+
+
+    <!-- ====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="/"
+                class="brand"
+            >
+
+                <div class="brand-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <div class="brand-name">
+                        StudyWise
+                    </div>
+
+                    <div class="brand-subtitle">
+                        AI Study Companion
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <div class="nav-right">
+
+                <div class="online-status">
+
+                    <span class="online-dot"></span>
+
+                    AI Online
+
+                </div>
+
+
+                <button
+                    id="themeToggle"
+                    class="theme-button"
+                    type="button"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ====================================================
+         HERO
+    ===================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-container">
+
+
+            <div class="hero-badge">
+
+                <span>✨</span>
+
+                Intelligent Academic Planning
+
+            </div>
+
+
+            <h1>
+
+                Study smarter.
+
+                <span>
+                    Grow faster.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                StudyWise combines Machine Learning,
+                NLP and adaptive feedback to create
+                a study plan personalized to your
+                academic performance.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#planner"
+                    class="primary-button"
+                >
+
+                    Create My Plan
+
+                    <span>→</span>
+
+                </a>
+
+
+                <a
+                    href="#dashboard"
+                    class="secondary-button"
+                >
+
+                    View Dashboard
+
+                </a>
+
+            </div>
+
+
+            <!-- HERO MINI CARD -->
+
+            <div class="hero-recommendation">
+
+                <div class="recommendation-top">
+
+                    <span>
+                        AI Recommendation
+                    </span>
+
+                    <span class="pulse-dot"></span>
+
+                </div>
+
+
+                <div class="recommendation-body">
+
+                    <div class="recommendation-icon">
+                        🤖
+                    </div>
+
+
+                    <div>
+
+                        <div class="recommendation-title">
+                            Machine Learning
+                        </div>
+
+                        <div class="recommendation-hours">
+                            1.5h
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation-priority">
+
+                        Daily focus
+
+                        <strong>
+                            🔥 High priority
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ====================================================
+         FEATURE STRIP
+    ===================================================== -->
+
+    <section class="feature-strip">
+
+        <div class="feature-grid">
+
+
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <strong>
+                        Prediction
+                    </strong>
+
+                    <span>
+                        Random Forest
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <strong>
+                        Weak Topics
+                    </strong>
+
+                    <span>
+                        NLP Powered
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    🔄
+                </div>
+
+                <div>
+
+                    <strong>
+                        Planning
+                    </strong>
+
+                    <span>
+                        Adaptive
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+                <div class="feature-icon">
+                    🧪
+                </div>
+
+                <div>
+
+                    <strong>
+                        Test Suite
+                    </strong>
+
+                    <span>
+                        22 Passing
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================================
+         MAIN
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             PLANNER
+        ================================================== -->
+
+        <section
+            id="planner"
+            class="section planner-section"
+        >
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    PERSONALIZATION
+                </div>
+
+                <h2>
+                    Build your study plan
+                </h2>
+
+                <p>
+                    Select your subjects and tell
+                    StudyWise about your preparation.
+                </p>
+
+            </div>
+
+
+
+            <!-- SUBJECT SELECTION -->
+
+            <div class="glass-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>
+                            📚 Choose Your Subjects
+                        </h3>
+
+                        <p>
+                            Select one or more subjects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-selector">
+
+
+                    <label class="subject-option">
+
+                        <input
+                            type="checkbox"
+                            class="subject-checkbox"
+                            value="Python"
+                        >
+
+                        <span class="subject-option-content">
+
+                            <span class="subject-emoji">
+                                🐍
+                            </span>
+
+                            <span>
+                                Python
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="subject-option">
+
+                        <input
+                            type="checkbox"
+                            class="subject-checkbox"
+                            value="Machine Learning"
+                            checked
+                        >
+
+                        <span class="subject-option-content">
+
+                            <span class="subject-emoji">
+                                🤖
+                            </span>
+
+                            <span>
+                                Machine Learning
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="subject-option">
+
+                        <input
+                            type="checkbox"
+                            class="subject-checkbox"
+                            value="DBMS"
+                        >
+
+                        <span class="subject-option-content">
+
+                            <span class="subject-emoji">
+                                🗄️
+                            </span>
+
+                            <span>
+                                DBMS
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="subject-option">
+
+                        <input
+                            type="checkbox"
+                            class="subject-checkbox"
+                            value="Operating Systems"
+                        >
+
+                        <span class="subject-option-content">
+
+                            <span class="subject-emoji">
+                                💻
+                            </span>
+
+                            <span>
+                                Operating Systems
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="subject-option">
+
+                        <input
+                            type="checkbox"
+                            class="subject-checkbox"
+                            value="Computer Networks"
+                        >
+
+                        <span class="subject-option-content">
+
+                            <span class="subject-emoji">
+                                🌐
+                            </span>
+
+                            <span>
+                                Computer Networks
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+
+                    <label class="subject-option">
+
+                        <input
+                            type="checkbox"
+                            class="subject-checkbox"
+                            value="Java"
+                        >
+
+                        <span class="subject-option-content">
+
+                            <span class="subject-emoji">
+                                ☕
+                            </span>
+
+                            <span>
+                                Java
+                            </span>
+
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SUBJECT INPUT CARDS -->
+
+            <div
+                id="subjectCards"
+                class="subject-cards"
+            ></div>
+
+
+
+            <!-- COMMON SETTINGS -->
+
+            <div class="glass-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>
+                            ⏱️ Study Availability
+                        </h3>
+
+                        <p>
+                            Tell us how much time you have.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid common-settings">
+
+                    <div class="form-group">
+
+                        <label for="availableHours">
+                            Daily Available Hours
+                        </label>
+
+                        <input
+                            id="availableHours"
+                            type="number"
+                            min="0.5"
+                            max="10"
+                            step="0.5"
+                            value="3"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="startTime">
+                            Preferred Start Time
+                        </label>
+
+                        <input
+                            id="startTime"
+                            type="time"
+                            value="09:00"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WEAK TOPICS -->
+
+            <div class="glass-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>
+                            🧠 Tell StudyWise Your Weak Topics
+                        </h3>
+
+                        <p>
+                            Mention subjects or topics you find difficult.
+                        </p>
+
+                    </div>
+
+                    <span class="ai-pill">
+                        NLP
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="weakTopics"
+                    class="topic-textarea"
+                    rows="5"
+                    placeholder="Example: I struggle with DBMS joins and normalization. I also find machine learning regression difficult."
+                ></textarea>
+
+
+                <div class="input-hint">
+
+                    💡 StudyWise uses NLP-based keyword detection
+                    to identify relevant weak topics.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GENERATE BUTTON -->
+
+            <button
+                id="generateButton"
+                class="generate-button"
+                type="button"
+            >
+
+                Generate Personalized Plan
+
+                <span>
+                    ✨
+                </span>
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section
+            id="dashboard"
+            class="section dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    AI DASHBOARD
+                </div>
+
+                <h2>
+                    Your personalized plan
+                </h2>
+
+                <p>
+                    Your ML prediction and planning results
+                    appear here.
+                </p>
+
+            </div>
+
+
+
+            <!-- SUMMARY -->
+
+            <div class="dashboard-summary">
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Study Required
+                        </span>
+
+                        <strong id="totalRequired">
+                            0.0h
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ⏱️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Daily Study Time
+                        </span>
+
+                        <strong id="totalDaily">
+                            0.0h
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Subjects
+                        </span>
+
+                        <strong id="totalSubjects">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Weak Topics
+                        </span>
+
+                        <strong id="totalWeakTopics">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SUBJECT RESULTS -->
+
+            <div class="glass-card dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>
+                            📊 Subject Recommendations
+                        </h3>
+
+                        <p>
+                            AI-generated study requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="resultsContainer"
+                    class="results-container"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ✨
+                        </div>
+
+                        <h3>
+                            No plan generated yet
+                        </h3>
+
+                        <p>
+                            Fill in your preparation details
+                            above and generate your personalized plan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NLP TOPICS -->
+
+            <div class="glass-card dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>
+                            🧠 Detected Weak Topics
+                        </h3>
+
+                        <p>
+                            Topics detected from your description.
+                        </p>
+
+                    </div>
+
+                    <span class="ai-pill">
+                        NLP
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="topicTags"
+                    class="topic-tags"
+                >
+
+                    <span class="muted-message">
+                        No topics detected yet.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIMETABLE -->
+
+            <div class="glass-card dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>
+                            🗓️ Today's Timetable
+                        </h3>
+
+                        <p>
+                            Your available study time is divided
+                            between subjects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="timeline"
+                    class="timeline"
+                >
+
+                    <div class="empty-state small">
+
+                        <div class="empty-icon">
+                            🕘
+                        </div>
+
+                        <p>
+                            Generate a plan to create
+                            your timetable.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADAPTIVE FEEDBACK
+            ================================================== -->
+
+            <div class="glass-card dashboard-card feedback-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <div class="section-label">
+                            ADAPTIVE ENGINE
+                        </div>
+
+                        <h3>
+                            🔄 Update Your Progress
+                        </h3>
+
+                        <p>
+                            Enter your quiz performance and
+                            actual study time to adapt priority.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid feedback-form">
+
+                    <div class="form-group">
+
+                        <label for="feedbackSubject">
+                            Subject
+                        </label>
+
+                        <select id="feedbackSubject">
+
+                            <option value="">
+                                Generate a plan first
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="actualHours">
+                            Actual Study Hours
+                        </label>
+
+                        <input
+                            id="actualHours"
+                            type="number"
+                            min="0"
+                            max="10"
+                            step="0.5"
+                            value="1"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="quizScore">
+                            Quiz Score (%)
+                        </label>
+
+                        <input
+                            id="quizScore"
+                            type="number"
+                            min="0"
+                            max="100"
+                            value="70"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="updateFeedbackButton"
+                    class="secondary-action-button"
+                    type="button"
+                >
+
+                    Update Priority
+
+                    <span>
+                        ↻
+                    </span>
+
+                </button>
+
+
+                <div
+                    id="feedbackResult"
+                    class="feedback-result"
+                ></div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EXPLAINABILITY
+            ================================================== -->
+
+            <div class="glass-card dashboard-card explainability-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <div class="section-label">
+                            EXPLAINABLE AI
+                        </div>
+
+                        <h3>
+                            🔍 Why these recommendations?
+                        </h3>
+
+                        <p>
+                            StudyWise uses these student factors
+                            when predicting study requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="explain-grid">
+
+
+                    <div class="explain-item">
+
+                        <div class="explain-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Current Marks
+                            </strong>
+
+                            <p>
+                                Lower academic performance
+                                can increase recommended study time.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="explain-item">
+
+                        <div class="explain-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Difficulty
+                            </strong>
+
+                            <p>
+                                Difficult subjects require
+                                additional preparation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="explain-item">
+
+                        <div class="explain-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Confidence
+                            </strong>
+
+                            <p>
+                                Lower confidence increases
+                                the need for revision.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="explain-item">
+
+                        <div class="explain-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Days Remaining
+                            </strong>
+
+                            <p>
+                                Shorter preparation windows
+                                affect the recommendation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <strong>
+                    📚 StudyWise
+                </strong>
+
+                <p>
+                    AI-powered personalized study planning.
+                </p>
+
+            </div>
+
+
+            <div class="footer-tech">
+
+                Built with
+
+                <span>
+                    Python
+                </span>
+
+                +
+
+                <span>
+                    Flask
+                </span>
+
+                +
+
+                <span>
+                    Machine Learning
+                </span>
+
+                +
+
+                <span>
+                    NLP
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- IMPORTANT: Flask Static JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>
