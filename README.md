@@ -1,82 +1,106 @@
 # 📚 StudyWise — AI-Powered Personalized Study Planner
 
-StudyWise is an AI-powered academic planning application that helps students create personalized study schedules based on their academic performance, subject difficulty, confidence level, available study time, and remaining preparation days.
+StudyWise is a web-based AI study planning application that creates personalized study recommendations based on a student's academic performance, subject difficulty, confidence level, preparation time, and previous study behavior.
 
-The system combines:
-
-- 🤖 Machine Learning
-- 🧠 NLP-based weak-topic detection
-- 📊 Rule-based priority scoring
-- 🔄 Adaptive feedback
-- 🗓️ Personalized timetable generation
-- 📈 Interactive data visualization
-- 🧪 Automated testing
+The system combines Machine Learning, NLP, rule-based prioritization, study-time allocation, and adaptive feedback into one application.
 
 ---
 
-# 🎯 Problem Statement
+## 🌐 Live Demo
 
-Students often struggle to decide:
+👉 [Open StudyWise](https://studywise-va69.onrender.com)
+---
 
-- Which subject should receive more attention?
-- How many hours should be spent studying?
-- Which topics need revision?
-- How should available study time be divided?
-- How should the plan change after a poor or good quiz result?
+## 🎯 Problem Statement
 
-StudyWise attempts to solve these problems by combining Machine Learning with rule-based recommendation logic and NLP-based topic detection.
+Students often study all subjects for the same amount of time even though their academic needs are different.
+
+StudyWise attempts to solve this problem by analyzing multiple student-related factors and generating a personalized study plan.
+
+The system answers questions such as:
+
+- How many hours should I study?
+- Which subject needs more attention?
+- Which topics appear to be weak?
+- How should my available daily time be divided?
+- How should my priority change after a quiz?
 
 ---
 
-# 💡 Solution
+## ✨ Features
 
-StudyWise takes student academic information as input and generates a personalized study plan.
+### 🤖 Machine Learning Study Prediction
 
-The system:
+A Random Forest Regressor predicts recommended study hours using:
 
-1. Predicts recommended study hours using a Random Forest Regression model.
-2. Calculates subject priority using academic and difficulty-related factors.
-3. Detects weak topics using subject-aware NLP keyword detection.
-4. Allocates available daily study time across subjects.
-5. Generates a structured timetable with study sessions and breaks.
-6. Collects quiz performance and actual study time.
-7. Dynamically updates subject priority using adaptive feedback.
-8. Displays the results through an interactive Streamlit dashboard.
+- Previous marks
+- Current marks
+- Subject difficulty
+- Days remaining
+- Confidence level
+- Previous study hours
+- Available daily hours
 
 ---
 
-# 🏗️ System Architecture
+### 📚 Multi-Subject Planning
+
+Students can select multiple subjects such as:
+
+- Python
+- Machine Learning
+- DBMS
+- Operating Systems
+- Computer Networks
+- Java
+
+The application generates recommendations for each selected subject.
+
+---
+
+### 🧠 NLP Weak Topic Detection
+
+StudyWise analyzes the student's description of difficult topics and detects known subject/topic keywords.
+
+For example:
+
+> "I struggle with DBMS joins and normalization."
+
+The system can identify:
+
+- DBMS → joins
+- DBMS → normalization
+
+---
+
+### 🎯 Priority Engine
+
+A rule-based priority score is calculated using:
+
+- Current marks
+- Difficulty
+- Confidence
+- Detected weak topics
+
+Subjects can then receive:
+
+- 🔴 HIGH
+- 🟡 MEDIUM
+- 🟢 LOW
+
+priority.
+
+---
+
+### ⏱️ Study Time Allocation
+
+The predicted study requirements are converted into a daily schedule based on the student's available study time.
+
+Example:
 
 ```text
-                    Student
-                       │
-                       ▼
-              Streamlit Input Form
-                       │
-             ┌─────────┼─────────┐
-             │         │         │
-             ▼         ▼         ▼
-        ML Model      NLP      Priority
-             │         │         │
-             ▼         ▼         ▼
-       Study Hours  Weak Topics  Score
-             │         │         │
-             └─────────┼─────────┘
-                       │
-                       ▼
-              Recommendation Engine
-                       │
-                       ▼
-             Daily Study Allocation
-                       │
-                       ▼
-              Timetable Generator
-                       │
-                       ▼
-               StudyWise Dashboard
-                       │
-                       ▼
-              Quiz + Study Feedback
-                       │
-                       ▼
-             Adaptive Priority Update
+Available daily time: 3 hours
+
+Machine Learning → 1.4h
+DBMS             → 0.9h
+Python           → 0.7h
