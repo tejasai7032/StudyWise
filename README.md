@@ -5,12 +5,13 @@ StudyWise is a web-based AI study planning application that creates personalized
 The system combines Machine Learning, NLP, rule-based prioritization, study-time allocation, and adaptive feedback into one application.
 
 ---
+## 🌐 Live Demos
 
-## 🌐 Live Demo
-
+### Flask Web App
 👉 [Open StudyWise](https://studywise-va69.onrender.com)
----
 
+### Streamlit App
+👉 [Open StudyWise on Streamlit](https://studywise-rbj4lsmfxvrkjhopna7emt.streamlit.app/)
 ## 🎯 Problem Statement
 
 Students often study all subjects for the same amount of time even though their academic needs are different.
